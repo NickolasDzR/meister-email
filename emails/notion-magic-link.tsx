@@ -93,6 +93,10 @@ NotionMagicLinkEmail.PreviewProps = {
 
 export default NotionMagicLinkEmail;
 
+const meisterTheme = {
+
+}
+
 const main = {
   backgroundColor: "#ffffff",
 };
