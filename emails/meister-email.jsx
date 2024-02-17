@@ -8,7 +8,7 @@ const currentEmail = "nickolasdzr@yandex.ru";
 const currentSiteUrl = "https://tk-meister.ru/"
 
 const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
+    ? currentSiteUrl
     : "";
 
 export default function Email() {
@@ -16,12 +16,13 @@ export default function Email() {
         <Html>
             <Head>
                 <title>Коммерческое предложение ООО "Мейстер"</title>
+                <link rel="stylesheet" href={currentSiteUrl + "email-assets/meister-email-fonts.css"}/>
             </Head>
             <Body style={main}>
                 <Container>
                     <Row>
-                        <Column>
-                            <Link href={`tel:${currentPhone}`} style={linkReset}>
+                        <Column style={col4}>
+                            <Link href={`tel:${currentPhone}`} style={{...linkReset, ...linkTopPhone}}>
                                 <Img
                                     src={`${baseUrl}/static/phone.svg`}
                                     alt="картинка телефона"
@@ -32,18 +33,19 @@ export default function Email() {
                                 {currentPhone}
                             </Link>
                         </Column>
-                        <Column>
-                            <Link href={currentSiteUrl}>
+                        <Column style={col4}>
+                            <Link href={currentSiteUrl} style={linkLogo}>
                                 <Img
                                     src={`../../static/logo.png`}
                                     width="163"
                                     height="56"
                                     alt="Логотип ООО 'Мейстер'"
+                                    style={mainLogo}
                                 />
                             </Link>
                         </Column>
-                        <Column>
-                            <Link href={`mailto:${currentEmail}`} style={linkReset}>
+                        <Column style={col4}>
+                            <Link href={`mailto:${currentEmail}`} style={{...linkReset, ...linkTopEmail}}>
                                 {currentEmail}
                                 <Img
                                     src={`${baseUrl}/static/mail.svg`}
@@ -61,8 +63,24 @@ export default function Email() {
     );
 }
 
+const col4 = {
+    width: "33.3333%",
+}
+
 const main = {
     backgroundColor: "white",
+    fontFamily: 'ProximaNova, Helvetica, Arial, sans-serif',
+    fontWeight: 300,
+}
+
+const mainLogo = {
+    display: "inline",
+}
+
+const linkLogo = {
+    width: "100%",
+    display: "inline-block",
+    textAlign: "center",
 }
 
 const topHeadPhoneSvg = {
@@ -80,4 +98,16 @@ topHeadEmailSvg["verticalAlign"] = "bottom";
 const linkReset = {
     textDecoration: "none",
     color: "black",
+    display: "inline-block",
+}
+
+const linkTopPhone = {
+    width: "100%",
+    textAlign: "left",
+    fontWeight: 400,
+}
+
+const linkTopEmail = {
+    width: "100%",
+    textAlign: "right",
 }
