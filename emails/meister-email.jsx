@@ -113,10 +113,10 @@ export default function Email() {
                             </Column>
                         </Row>
                     </Container>
-                    <Container style={{paddingTop: "10px", paddingBottom: "40px"}}>
+                    <Container>
                         <Row>
-                            <Column style={{backgroundImage: `url(${baseUrl}/static/partners-bg.png)`, backgroundSize: "contain", backgroundRepeat: "no-repeat"}}>
-                                <h1 className="text-2xl font-bold text-center p-0 m-0 mb-20" style={{fontSize: "25px"}}>Уважаемые партнеры!</h1>
+                            <Column style={{backgroundImage: `url(${baseUrl}/static/partners-bg.png)`, backgroundSize: "cover", backgroundRepeat: "no-repeat", paddingTop: "10px", paddingBottom: "40px"}}>
+                                <Text className="text-2xl text-center p-0 m-0 mb-20" style={{fontSize: "24px", fontWeight: 700}}>Уважаемые партнеры!</Text>
                                 <Text className="text-left p-0 m-0 mb-5" style={{fontSize: "16px", lineHeight: "22px"}}>Наша компания специализируется на перевозке грузов по всей России и её регионам. Нам доверяют клиенты, благодарят за качественную работу и обращаются снова и снова.</Text>
                                 <Text className="text-left p-0 m-0" style={{fontSize: "16px", lineHeight: "22px"}}>Наша компания специализируется на перевозке грузов по всей России и её регионам. Нам доверяют клиенты, благодарят за качественную работу и обращаются снова и снова.</Text>
                             </Column>
@@ -126,7 +126,7 @@ export default function Email() {
                         <Container>
                             <Row>
                                 <Column style={{width: "100%"}}>
-                                    <h1 style={{color: "white", marginBottom: "30px", marginTop: 0, textAlign: "center", padding: 0}}>Мы даем 100% гарантию</h1>
+                                    <Text style={{color: "white", marginBottom: "30px", marginTop: 0, textAlign: "center", padding: 0, fontSize: "24px", fontWeight: 700}}>Мы даем 100% гарантию</Text>
                                 </Column>
                             </Row>
                         </Container>
@@ -165,6 +165,66 @@ export default function Email() {
                                         />
                                     </div>
                                     <Text style={{color: "white", fontSize: "14px", lineHeight: "14px", paddingBottom: 0, marginBottom: 0}}>Сопровождение и информирование на всем пути грузоперевозки</Text>
+                                </Column>
+                            </Row>
+                        </Container>
+                    </Section>
+                    <Section style={{backgroundImage: `url(${baseUrl}/static/our-partners-bg.png)`, backgroundSize: "cover", backgroundRepeat: "no-repeat", paddingTop: "40px", paddingBottom: "40px"}}>
+                        <Container>
+                            <Row>
+                                <Column>
+                                    <Text style={{marginBottom: "30px", marginTop: 0, textAlign: "center", padding: 0, fontSize: "24px", fontWeight: 700}}>
+                                        С Нами сотрудничают
+                                    </Text>
+                                </Column>
+                            </Row>
+                        </Container>
+                        <Container>
+                            <Row>
+                                <Column style={{width: "33.3333%", textAlign: "center", height: "1px"}}>
+                                    <Link href="http://seyma.ru/" target="_blank" style={{fontWeight: 400, color: "black", display: "inline-block", height: "100%"}}>
+                                        <div style={{height: "70px", lineHeight: "70px", paddingLeft: "15px", paddingRight: "15px", marginBottom: "10px"}}>
+                                            <Img
+                                                src={`${baseUrl}/static/seyma.png`}
+                                                width="55"
+                                                style={{display: "inline", verticalAlign: "middle", maxWidth: "100%", height: "auto", maxHeight: "100%"}}
+                                                alt="картинка телефона"
+                                            />
+                                        </div>
+                                        <Text style={{fontSize: "14px", lineHeight: "14px", padding: 0, margin: 0}}>
+                                            Агрофирма птицефабрика Сеймовская
+                                        </Text>
+                                    </Link>
+                                </Column>
+                                <Column style={{width: "33.3333%", textAlign: "center", height: "1px"}}>
+                                    <Link href="https://gormanu.ru/" target="_blank" style={{fontWeight: 400, color: "black", display: "inline-block", height: "100%"}}>
+                                        <div style={{height: "70px", lineHeight: "70px", paddingLeft: "15px", paddingRight: "15px", marginBottom: "10px"}}>
+                                            <Img
+                                                src={`${baseUrl}/static/gorohovec.svg`}
+                                                width="110"
+                                                style={{display: "inline", verticalAlign: "middle", maxWidth: "100%", height: "auto", maxHeight: "100%"}}
+                                                alt="картинка телефона"
+                                            />
+                                        </div>
+                                        <Text style={{fontSize: "14px", lineHeight: "14px", padding: 0, margin: 0}}>
+                                            Гороховецкая мануфактура
+                                        </Text>
+                                    </Link>
+                                </Column>
+                                <Column style={{width: "33.3333%", textAlign: "center", height: "1px"}}>
+                                    <Link href="http://www.biskotti.ru/" target="_blank" style={{fontWeight: 400, color: "black", display: "inline-block", height: "100%"}}>
+                                        <div style={{height: "70px", lineHeight: "70px", paddingLeft: "15px", paddingRight: "15px", marginBottom: "10px"}}>
+                                            <Img
+                                                src={`${baseUrl}/static/biskotti.png`}
+                                                width="130"
+                                                style={{display: "inline", verticalAlign: "middle", maxWidth: "100%", height: "auto", maxHeight: "100%"}}
+                                                alt="картинка телефона"
+                                            />
+                                        </div>
+                                        <Text style={{fontSize: "14px", lineHeight: "14px", padding: 0, margin: 0}}>
+                                            ООО "БИСКОТТИ ПЛЮС"
+                                        </Text>
+                                    </Link>
                                 </Column>
                             </Row>
                         </Container>
