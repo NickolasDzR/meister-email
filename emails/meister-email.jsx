@@ -116,21 +116,21 @@ export default function Email() {
                     <Container>
                         <Row>
                             <Column style={{backgroundImage: `url(${baseUrl}/static/partners-bg.png)`, backgroundSize: "cover", backgroundRepeat: "no-repeat", paddingTop: "10px", paddingBottom: "40px"}}>
-                                <Text className="text-2xl text-center p-0 m-0 mb-20" style={{fontSize: "24px", fontWeight: 700}}>Уважаемые партнеры!</Text>
-                                <Text className="text-left p-0 m-0 mb-5" style={{fontSize: "16px", lineHeight: "22px"}}>Наша компания специализируется на перевозке грузов по всей России и её регионам. Нам доверяют клиенты, благодарят за качественную работу и обращаются снова и снова.</Text>
-                                <Text className="text-left p-0 m-0" style={{fontSize: "16px", lineHeight: "22px"}}>Наша компания специализируется на перевозке грузов по всей России и её регионам. Нам доверяют клиенты, благодарят за качественную работу и обращаются снова и снова.</Text>
+                                <Text className="text-2xl text-center p-0 m-0 mb-20" style={{fontSize: "24px", fontWeight: 700}}>Грузоперевозки без проблем по антикризисным расценкам</Text>
+                                <Text className="text-left p-0 m-0 mb-5" style={{fontSize: "16px", lineHeight: "22px"}}>Вашему предприятию не нужно тратить время и силы на то, чтобы организовать доставку груза в любую точку страны. Обратитесь в нашу компанию и доверьте свою заботу профессионалам.</Text>
+                                <Text className="text-left p-0 m-0" style={{fontSize: "16px", lineHeight: "22px"}}>Компания «Мейстер» функционирует на отечественном рынке с 2016 года. Мы успешно доставили более 150 млн. тонн различных грузов во все города нашей страны. МЫ полностью обеспечим сохранность вашего груза и его своевременную доставку.</Text>
                             </Column>
                         </Row>
                     </Container>
-                    <Section style={{backgroundColor: "#a95033", paddingTop: "40px", paddingBottom: "40px"}}>
+                    <Section style={{backgroundColor: "#a95033", paddingTop: "40px", paddingBottom: "10px"}}>
                         <Container>
                             <Row>
                                 <Column style={{width: "100%"}}>
-                                    <Text style={{color: "white", marginBottom: "30px", marginTop: 0, textAlign: "center", padding: 0, fontSize: "24px", fontWeight: 700}}>Мы даем 100% гарантию</Text>
+                                    <Text style={{color: "white", marginBottom: "30px", marginTop: 0, textAlign: "center", padding: 0, fontSize: "24px", fontWeight: 700}}>Обратившись к нам, вы получаете:</Text>
                                 </Column>
                             </Row>
                         </Container>
-                        <Container>
+                        <Container style={{marginBottom: "30px"}}>
                             <Row>
                                 <Column style={{textAlign: "center", width: "33.3333%", paddingLeft: "7px", paddingRight: "7px"}}>
                                     <div style={{height: "55px", verticalAlign: "top"}}>
@@ -142,7 +142,18 @@ export default function Email() {
                                             alt="картинка телефона"
                                         />
                                     </div>
-                                    <Text style={{color: "white", fontSize: "14px", lineHeight: "14px", paddingBottom: 0, marginBottom: 0}}>Наш преоритет это сохранность и качество</Text>
+                                    <Text style={{color: "white", fontSize: "14px", lineHeight: "14px", paddingBottom: 0, marginBottom: 0}}>Возможность перевозки груза от 1 центнера до 20 тонн в любой регион Российской Федерации</Text>
+                                </Column>
+                                <Column style={{textAlign: "center", width: "33.3333%", paddingLeft: "7px", paddingRight: "7px"}}>
+                                    <div style={{height: "55px", verticalAlign: "top"}}>
+                                        <Img
+                                            src={`${baseUrl}/static/Communication.png`}
+                                            width="61"
+                                            className="inline align-middle max-w-full h-auto"
+                                            alt="картинка телефона"
+                                        />
+                                    </div>
+                                    <Text style={{color: "white", fontSize: "14px", lineHeight: "14px", paddingBottom: 0, marginBottom: 0}}>Отслеживание перемещения груза посредством геолокационной системы.</Text>
                                 </Column>
                                 <Column style={{textAlign: "center", width: "33.3333%", paddingLeft: "7px", paddingRight: "7px"}}>
                                     <div style={{height: "55px", verticalAlign: "top"}}>
@@ -155,16 +166,12 @@ export default function Email() {
                                     </div>
                                     <Text style={{color: "white", fontSize: "14px", lineHeight: "14px", paddingBottom: 0, marginBottom: 0}}>Доставка вашего груза точно в обозначенный договором срок</Text>
                                 </Column>
-                                <Column style={{textAlign: "center", width: "33.3333%", paddingLeft: "7px", paddingRight: "7px"}}>
-                                    <div style={{height: "55px", verticalAlign: "top"}}>
-                                        <Img
-                                            src={`${baseUrl}/static/Communication.png`}
-                                            width="61"
-                                            className="inline align-middle max-w-full h-auto"
-                                            alt="картинка телефона"
-                                        />
-                                    </div>
-                                    <Text style={{color: "white", fontSize: "14px", lineHeight: "14px", paddingBottom: 0, marginBottom: 0}}>Сопровождение и информирование на всем пути грузоперевозки</Text>
+                            </Row>
+                        </Container>
+                        <Container>
+                            <Row>
+                                <Column style={{width: "100%"}}>
+                                    <Text style={{color: "white", marginBottom: "30px", marginTop: 0, textAlign: "center", padding: 0, fontSize: "20px", fontWeight: 700}}>Цены, которые радуют каждого</Text>
                                 </Column>
                             </Row>
                         </Container>
@@ -191,7 +198,7 @@ export default function Email() {
                                                 alt="картинка телефона"
                                             />
                                         </div>
-                                        <Text style={{fontSize: "14px", lineHeight: "14px", padding: 0, margin: 0}}>
+                                        <Text style={{fontSize: "14px", liыneHeight: "14px", padding: 0, margin: 0}}>
                                             Агрофирма птицефабрика Сеймовская
                                         </Text>
                                     </Link>
@@ -225,6 +232,17 @@ export default function Email() {
                                             ООО "БИСКОТТИ ПЛЮС"
                                         </Text>
                                     </Link>
+                                </Column>
+                            </Row>
+                        </Container>
+                    </Section>
+                    <Section style={{paddingTop: "40px", paddingBottom: "40px"}}>
+                        <Container>
+                            <Row>
+                                <Column>
+                                    <Text style={{marginBottom: "30px", marginTop: 0, textAlign: "center", padding: 0, fontSize: "24px", fontWeight: 700}}>
+                                        Отзывы наших партнеров говорят сами за себя
+                                    </Text>
                                 </Column>
                             </Row>
                         </Container>
