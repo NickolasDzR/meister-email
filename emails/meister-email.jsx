@@ -236,13 +236,100 @@ export default function Email() {
                             </Row>
                         </Container>
                     </Section>
-                    <Section style={{paddingTop: "40px", paddingBottom: "40px"}}>
+                    <Section style={{paddingTop: "40px", paddingBottom: "40px", backgroundImage: `url(${baseUrl}/static/partners-bg.png)`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
                         <Container>
                             <Row>
                                 <Column>
                                     <Text style={{marginBottom: "30px", marginTop: 0, textAlign: "center", padding: 0, fontSize: "24px", fontWeight: 700}}>
                                         Отзывы наших партнеров говорят сами за себя
                                     </Text>
+                                </Column>
+                            </Row>
+                        </Container>
+                        <Container>
+                            <Row>
+                                <Column>
+                                    <div style={{marginBottom: "15px"}}>
+                                        <Img
+                                            src={`${baseUrl}/static/quote.png`}
+                                            width="20"
+                                            height="14"
+                                            style={{display: "inline-block", marginRight: "3px"}}
+                                        />
+                                        Отличный перевозчик, профессионал своего дела. БЫСТРЫЙ. Четкий контроль погрузочно-разгрузочных работ. Информативность и добросовестность. Успеха вам и процветания! Рекомендую!
+                                    </div>
+                                    <div style={{marginBottom: "15px"}}>
+                                        <Img
+                                            src={`${baseUrl}/static/quote.png`}
+                                            width="20"
+                                            height="14"
+                                            style={{display: "inline-block", marginRight: "3px"}}
+                                        />
+                                        Замечательный, ответственный перевозчик! Оперативность, качество, приятное общение, порядочность — всё это вызывает уважение! Спасибо за профессиональный подход к делу. Желаем процветания и успехов!
+                                    </div>
+                                    <div>
+                                        <Img
+                                            src={`${baseUrl}/static/quote.png`}
+                                            width="20"
+                                            height="14"
+                                            style={{display: "inline-block", marginRight: "3px"}}
+                                        />
+                                        Порядочный перевозчик. Доставка груза осуществляется без задержек и нареканий. Всем остался доволен, побольше бы таких перевозчиков. Надеюсь на дальнейшее сотрудничество!!!
+                                    </div>
+                                </Column>
+                            </Row>
+                        </Container>
+                    </Section>
+
+                    <Section style={{width: "100%", height: "3px", backgroundColor: "#a4c9cd"}}></Section>
+
+                    <Section style={{paddingTop: "30px", paddingBottom: "50px", backgroundImage: `url(${baseUrl}/static/footer-bg.png)`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
+                        <Container>
+                            <Row>
+                                <Column style={{marginBottom: "30px"}}>
+                                    <Link href={currentSiteUrl} style={{width: "100%", textAlign: "center", display: "inline-block"}}>
+                                        <Img
+                                            src={`${baseUrl}/static/logo-gray.png`}
+                                            width="117"
+                                            height="31"
+                                            style={{display: "inline"}}
+                                        />
+                                    </Link>
+                                </Column>
+                            </Row>
+                        </Container>
+                        <Container>
+                            <Row>
+                                <Column style={{marginBottom: "30px"}}>
+                                    <Text style={{fontSize: "16px", width: "100%", textAlign: "center"}}>
+                                        С уважением, команда ООО «Мейстер»
+                                    </Text>
+                                </Column>
+                            </Row>
+                        </Container>
+                        <Container>
+                            <Row>
+                                <Column>
+                                    <Link href={`tel:${currentPhone}`} style={{fontWeight: 600, display: "inline-block", textAlign: "center", color: "black", width: "100%"}}>
+                                        <Img
+                                            src={`${baseUrl}/static/phone.svg`}
+                                            alt="картинка телефона"
+                                            className="inline align-top mr-7"
+                                            width="16"
+                                            height="16"
+                                        />
+                                        {currentPhoneBeautified}
+                                    </Link>
+                                    <Link href={`mailto:${currentEmail}`} style={{...linkReset, ...linkTopEmail, display: "inline-block", textAlign: "center"}}>
+                                        {currentEmail}
+                                        <Img
+                                            src={`${baseUrl}/static/mail.svg`}
+                                            width="16"
+                                            height="16"
+                                            className="inline align-middle ml-7"
+                                            alt="картинка телефона"
+                                        />
+                                    </Link>
                                 </Column>
                             </Row>
                         </Container>
