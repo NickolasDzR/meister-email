@@ -14,31 +14,6 @@ import {
 } from "@react-email/components";
 import * as React from "react";
 
-const tailwindSettings = {
-    fontFamily: {
-        base: 'ProximaNova, Tahoma, Arial, sans-serif'
-    },
-    fontWeight: {
-        light: 300,
-        regular: 400,
-    },
-    extend: {
-        spacing: {
-            '1': '1px',
-            '2': '2px',
-            '3': '3px',
-            '4': '4px',
-            '5': '5px',
-            '6': '6px',
-            '7': '7px',
-            '8': '8px',
-            '9': '9px',
-            '10': '10px',
-            '20': '20px',
-        }
-    }
-}
-
 const currentPhone = "+79991205982";
 const currentPhoneBeautified = "+7 (999) 120 59 82"
 const currentName = "Николай";
@@ -51,23 +26,20 @@ const baseUrl = process.env.VERCEL_URL
 
 export default function Email() {
     return (
-        <Tailwind config={{
-            theme: tailwindSettings,
-        }}>
             <Html>
                 <Head>
                     <title>Коммерческое предложение ООО "Мейстер"</title>
                     <link rel="stylesheet" href={currentSiteUrl + "email-assets/meister-email-fonts.css"}/>
                 </Head>
-                <Body className="bg-white font-light font-base" style={{width: "600px", maxWidth: "600px", minWidth: "600px", margin: "0 auto"}}>
-                    <Container className="font-base bg-white font-light pt-5">
+                <Body style={{fontFamily: "ProximaNova, Tahoma, Arial, sans-serif", fontWeight: 300, width: "600px", maxWidth: "600px", minWidth: "600px", margin: "0 auto", backgroundColor: "white"}}>
+                    <Container style={{paddingTop: "15px"}}>
                         <Row>
-                            <Column style={{...col4, paddingLeft: "7", paddingRight: "7"}}>
-                                <Link href={`tel:${currentPhone}`} className="font-regular text-black inline">
+                            <Column style={{width: "33.3333%", maxWidth: "33.3333%", paddingLeft: "7", paddingRight: "7"}}>
+                                <Link href={`tel:${currentPhone}`} style={{fontWeight: 600, textDecoration: "none", color: "black", display: "inline", width: "100%", textAlign: "center"}}>
                                     <Img
                                         src={`${baseUrl}/static/phone.svg`}
                                         alt="картинка телефона"
-                                        className="inline align-top mr-7"
+                                        style={{display: "inline", verticalAlign: "middle", marginRight: "5px"}}
                                         width="16"
                                         height="16"
                                     />
@@ -75,25 +47,25 @@ export default function Email() {
                                     {currentPhoneBeautified}
                                 </Link>
                             </Column>
-                            <Column style={{...col4, paddingLeft: "7", paddingRight: "7"}}>
-                                <Link href={currentSiteUrl} style={linkLogo}>
+                            <Column style={{width: "33.3333%", maxWidth: "33.3333%", paddingLeft: "7", paddingRight: "7"}}>
+                                <Link href={currentSiteUrl} style={{width: "100%", display: "inline", textAlign: "center"}}>
                                     <Img
                                         src={`../../static/logo.png`}
                                         width="163"
                                         height="56"
                                         alt="Логотип ООО 'Мейстер'"
-                                        style={mainLogo}
+                                        style={{display: "inline"}}
                                     />
                                 </Link>
                             </Column>
-                            <Column style={{...col4, paddingLeft: "7", paddingRight: "7"}}>
-                                <Link href={`mailto:${currentEmail}`} style={{...linkReset, ...linkTopEmail}}>
+                            <Column style={{width: "33.3333%", maxWidth: "33.3333%", paddingLeft: "7", paddingRight: "7"}}>
+                                <Link href={`mailto:${currentEmail}`} style={{fontWeight: 600, textDecoration: "none", color: "black", display: "inline", width: "100%", textAlign: "center"}}>
                                     {currentEmail}
                                     <Img
                                         src={`${baseUrl}/static/mail.svg`}
                                         width="16"
                                         height="16"
-                                        className="inline align-middle ml-7"
+                                        style={{display: "inline", verticalAlign: "middle", marginLeft: "5px"}}
                                         alt="картинка телефона"
                                     />
                                 </Link>
@@ -102,12 +74,12 @@ export default function Email() {
                     </Container>
                     <Container>
                         <Row>
-                            <Column className="text-center">
+                            <Column style={{textAlign: "center"}}>
                                 <Img
                                     src={`${baseUrl}/static/main-photo.png`}
                                     width="640"
                                     height="341"
-                                    className="inline align-middle max-w-full h-auto"
+                                    style={{display: "inline", verticalAlign: "middle", maxWidth: "100%", height: "auto"}}
                                     alt="картинка телефона"
                                 />
                             </Column>
@@ -116,62 +88,68 @@ export default function Email() {
                     <Container>
                         <Row>
                             <Column style={{backgroundImage: `url(${baseUrl}/static/partners-bg.png)`, backgroundSize: "cover", backgroundRepeat: "no-repeat", paddingTop: "10px", paddingBottom: "40px"}}>
-                                <Text className="text-2xl text-center p-0 m-0 mb-20" style={{fontSize: "24px", fontWeight: 700}}>Грузоперевозки без проблем по антикризисным расценкам</Text>
-                                <Text className="text-left p-0 m-0 mb-5" style={{fontSize: "16px", lineHeight: "22px"}}>Вашему предприятию не нужно тратить время и силы на то, чтобы организовать доставку груза в любую точку страны. Обратитесь в нашу компанию и доверьте свою заботу профессионалам.</Text>
-                                <Text className="text-left p-0 m-0" style={{fontSize: "16px", lineHeight: "22px"}}>Компания «Мейстер» функционирует на отечественном рынке с 2016 года. Мы успешно доставили более 150 млн. тонн различных грузов во все города нашей страны. МЫ полностью обеспечим сохранность вашего груза и его своевременную доставку.</Text>
+                                <Text style={{fontSize: "24px", fontWeight: 700, textAlign: "center", marginBottom: "20px", padding: 0}}>Грузоперевозки без проблем по антикризисным расценкам</Text>
+                                <Text style={{fontSize: "16px", lineHeight: "22px", textAlign: "left", padding: 0, margin: 0, marginBottom: "5px"}}>Вашему предприятию не нужно тратить время и силы на то, чтобы организовать доставку груза в любую точку страны. Обратитесь в нашу компанию и доверьте свою заботу профессионалам.</Text>
+                                <Text style={{fontSize: "16px", lineHeight: "22px", textAlign: "left", padding: 0, margin: 0,}}>Компания «Мейстер» функционирует на отечественном рынке с 2016 года. Мы успешно доставили более 150 млн. тонн различных грузов во все города нашей страны. МЫ полностью обеспечим сохранность вашего груза и его своевременную доставку.</Text>
                             </Column>
                         </Row>
                     </Container>
-                    <Section style={{backgroundColor: "#a95033", paddingTop: "40px", paddingBottom: "10px"}}>
+                    <Section style={{backgroundColor: "#a95033", paddingTop: "40px", paddingBottom: "40px"}}>
                         <Container>
                             <Row>
                                 <Column style={{width: "100%"}}>
-                                    <Text style={{color: "white", marginBottom: "30px", marginTop: 0, textAlign: "center", padding: 0, fontSize: "24px", fontWeight: 700}}>Обратившись к нам, вы получаете:</Text>
+                                    <Text style={{color: "white", marginBottom: "35px", marginTop: 0, textAlign: "center", padding: 0, fontSize: "24px", fontWeight: 700}}>Обратившись к нам, вы получаете:</Text>
                                 </Column>
                             </Row>
                         </Container>
                         <Container style={{marginBottom: "30px"}}>
                             <Row>
-                                <Column style={{textAlign: "center", width: "33.3333%", paddingLeft: "7px", paddingRight: "7px"}}>
-                                    <div style={{height: "55px", verticalAlign: "top"}}>
-                                        <Img
-                                            src={`${baseUrl}/static/phone.png`}
-                                            width="65"
-                                            height="341"
-                                            className="inline align-middle max-w-full h-auto"
-                                            alt="картинка телефона"
-                                        />
+                                <Column style={{textAlign: "center", width: "33.3333%", paddingLeft: "7px", paddingRight: "7px", height: "1px"}}>
+                                    <div style={{height: "100%", verticalAlign: "top"}}>
+                                        <div style={{height: "55px"}}>
+                                            <Img
+                                                src={`${baseUrl}/static/phone.png`}
+                                                width="65"
+                                                height="341"
+                                                style={{display: "inline", varticalAlign: "middle", maxWidth: "100%", height: "auto"}}
+                                                alt="картинка телефона"
+                                            />
+                                        </div>
+                                        <Text style={{color: "white", fontSize: "14px", lineHeight: "14px", paddingBottom: 0, marginBottom: 0, marginTop: "15px"}}>Перевозка груза от 1 центнера до 20 тонн</Text>
                                     </div>
-                                    <Text style={{color: "white", fontSize: "14px", lineHeight: "14px", paddingBottom: 0, marginBottom: 0}}>Возможность перевозки груза от 1 центнера до 20 тонн в любой регион Российской Федерации</Text>
                                 </Column>
-                                <Column style={{textAlign: "center", width: "33.3333%", paddingLeft: "7px", paddingRight: "7px"}}>
-                                    <div style={{height: "55px", verticalAlign: "top"}}>
-                                        <Img
-                                            src={`${baseUrl}/static/Communication.png`}
-                                            width="61"
-                                            className="inline align-middle max-w-full h-auto"
-                                            alt="картинка телефона"
-                                        />
+                                <Column style={{textAlign: "center", width: "33.3333%", paddingLeft: "7px", paddingRight: "7px", height: "1px"}}>
+                                    <div style={{height: "100%", verticalAlign: "top"}}>
+                                        <div style={{height: "55px"}}>
+                                            <Img
+                                                src={`${baseUrl}/static/Communication.png`}
+                                                width="61"
+                                                style={{display: "inline", varticalAlign: "middle", maxWidth: "100%", height: "auto"}}
+                                                alt="картинка телефона"
+                                            />
+                                        </div>
+                                        <Text style={{color: "white", fontSize: "14px", lineHeight: "14px", paddingBottom: 0, marginBottom: 0, marginTop: "15px"}}>Отслеживание перемещения груза</Text>
                                     </div>
-                                    <Text style={{color: "white", fontSize: "14px", lineHeight: "14px", paddingBottom: 0, marginBottom: 0}}>Отслеживание перемещения груза посредством геолокационной системы.</Text>
                                 </Column>
-                                <Column style={{textAlign: "center", width: "33.3333%", paddingLeft: "7px", paddingRight: "7px"}}>
-                                    <div style={{height: "55px", verticalAlign: "top"}}>
-                                        <Img
-                                            src={`${baseUrl}/static/weight.png`}
-                                            width="76"
-                                            className="inline align-middle max-w-full h-auto"
-                                            alt="картинка телефона"
-                                        />
+                                <Column style={{textAlign: "center", width: "33.3333%", paddingLeft: "7px", paddingRight: "7px", height: "1px"}}>
+                                    <div style={{height: "100%", verticalAlign: "top"}}>
+                                        <div style={{height: "55px"}}>
+                                            <Img
+                                                src={`${baseUrl}/static/weight.png`}
+                                                width="76"
+                                                style={{display: "inline", varticalAlign: "middle", maxWidth: "100%", height: "auto"}}
+                                                alt="картинка телефона"
+                                            />
+                                        </div>
+                                        <Text style={{color: "white", fontSize: "14px", lineHeight: "14px", paddingBottom: 0, marginBottom: 0, marginTop: "15px"}}>Доставка груза в обозначенный срок</Text>
                                     </div>
-                                    <Text style={{color: "white", fontSize: "14px", lineHeight: "14px", paddingBottom: 0, marginBottom: 0}}>Доставка вашего груза точно в обозначенный договором срок</Text>
                                 </Column>
                             </Row>
                         </Container>
                         <Container>
                             <Row>
                                 <Column style={{width: "100%"}}>
-                                    <Text style={{color: "white", marginBottom: "30px", marginTop: 0, textAlign: "center", padding: 0, fontSize: "20px", fontWeight: 700}}>Цены, которые радуют каждого</Text>
+                                    <Text style={{color: "white", marginTop: "15px", marginBottom: 0, textAlign: "center", padding: 0, fontSize: "20px", fontWeight: 700}}>Цены, которые радуют каждого</Text>
                                 </Column>
                             </Row>
                         </Container>
@@ -180,7 +158,7 @@ export default function Email() {
                         <Container>
                             <Row>
                                 <Column>
-                                    <Text style={{marginBottom: "30px", marginTop: 0, textAlign: "center", padding: 0, fontSize: "24px", fontWeight: 700}}>
+                                    <Text style={{marginBottom: "35px", marginTop: 0, textAlign: "center", padding: 0, fontSize: "24px", fontWeight: 700}}>
                                         С Нами сотрудничают
                                     </Text>
                                 </Column>
@@ -240,7 +218,7 @@ export default function Email() {
                         <Container>
                             <Row>
                                 <Column>
-                                    <Text style={{marginBottom: "30px", marginTop: 0, textAlign: "center", padding: 0, fontSize: "24px", fontWeight: 700}}>
+                                    <Text style={{marginBottom: "35px", marginTop: 0, textAlign: "center", padding: 0, fontSize: "24px", fontWeight: 700}}>
                                         Отзывы наших партнеров говорят сами за себя
                                     </Text>
                                 </Column>
@@ -254,9 +232,11 @@ export default function Email() {
                                             src={`${baseUrl}/static/quote.png`}
                                             width="20"
                                             height="14"
-                                            style={{display: "inline-block", marginRight: "3px"}}
+                                            style={{display: "inline", marginRight: "3px"}}
                                         />
-                                        Отличный перевозчик, профессионал своего дела. БЫСТРЫЙ. Четкий контроль погрузочно-разгрузочных работ. Информативность и добросовестность. Успеха вам и процветания! Рекомендую!
+                                        <Text style={{fontSize: "16px", lineHeight: "18px", display: "inline"}}>
+                                            Отличный перевозчик, профессионал своего дела. БЫСТРЫЙ. Четкий контроль погрузочно-разгрузочных работ. Информативность и добросовестность. Успеха вам и процветания! Рекомендую!
+                                        </Text>
                                     </div>
                                     <div style={{marginBottom: "15px"}}>
                                         <Img
@@ -265,7 +245,9 @@ export default function Email() {
                                             height="14"
                                             style={{display: "inline-block", marginRight: "3px"}}
                                         />
-                                        Замечательный, ответственный перевозчик! Оперативность, качество, приятное общение, порядочность — всё это вызывает уважение! Спасибо за профессиональный подход к делу. Желаем процветания и успехов!
+                                        <Text style={{fontSize: "16px", lineHeight: "18px", display: "inline"}}>
+                                            Замечательный, ответственный перевозчик! Оперативность, качество, приятное общение, порядочность — всё это вызывает уважение! Спасибо за профессиональный подход к делу. Желаем процветания и успехов!
+                                        </Text>
                                     </div>
                                     <div>
                                         <Img
@@ -274,7 +256,9 @@ export default function Email() {
                                             height="14"
                                             style={{display: "inline-block", marginRight: "3px"}}
                                         />
-                                        Порядочный перевозчик. Доставка груза осуществляется без задержек и нареканий. Всем остался доволен, побольше бы таких перевозчиков. Надеюсь на дальнейшее сотрудничество!!!
+                                        <Text style={{fontSize: "16px", lineHeight: "18px", display: "inline"}}>
+                                            Порядочный перевозчик. Доставка груза осуществляется без задержек и нареканий. Всем остался доволен, побольше бы таких перевозчиков. Надеюсь на дальнейшее сотрудничество!!!
+                                        </Text>
                                     </div>
                                 </Column>
                             </Row>
@@ -284,7 +268,7 @@ export default function Email() {
                     <Section style={{width: "100%", height: "3px", backgroundColor: "#a4c9cd"}}></Section>
 
                     <Section style={{paddingTop: "30px", paddingBottom: "50px", backgroundImage: `url(${baseUrl}/static/footer-bg.png)`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
-                        <Container>
+                        <Container style={{marginBottom: "30px"}}>
                             <Row>
                                 <Column style={{marginBottom: "30px"}}>
                                     <Link href={currentSiteUrl} style={{width: "100%", textAlign: "center", display: "inline-block"}}>
@@ -298,10 +282,10 @@ export default function Email() {
                                 </Column>
                             </Row>
                         </Container>
-                        <Container>
+                        <Container style={{marginBottom: "25px"}}>
                             <Row>
                                 <Column style={{marginBottom: "30px"}}>
-                                    <Text style={{fontSize: "16px", width: "100%", textAlign: "center"}}>
+                                    <Text style={{fontSize: "16px", width: "100%", textAlign: "center", marginTop: 0, marginBottom: 0}}>
                                         С уважением, команда ООО «Мейстер»
                                     </Text>
                                 </Column>
@@ -310,23 +294,23 @@ export default function Email() {
                         <Container>
                             <Row>
                                 <Column>
-                                    <Link href={`tel:${currentPhone}`} style={{fontWeight: 600, display: "inline-block", textAlign: "center", color: "black", width: "100%"}}>
+                                    <Link href={`tel:${currentPhone}`} style={{fontWeight: 600, display: "inline-block", textAlign: "center", color: "black", width: "100%", marginBottom: "5px"}}>
                                         <Img
                                             src={`${baseUrl}/static/phone.svg`}
                                             alt="картинка телефона"
-                                            className="inline align-top mr-7"
+                                            style={{display: "inline", verticalAlign: "middle", marginRight: "7px"}}
                                             width="16"
                                             height="16"
                                         />
                                         {currentPhoneBeautified}
                                     </Link>
-                                    <Link href={`mailto:${currentEmail}`} style={{...linkReset, ...linkTopEmail, display: "inline-block", textAlign: "center"}}>
+                                    <Link href={`mailto:${currentEmail}`} style={{fontWeight: 400, textDecoration: "none", color: "black", display: "inline-block", width: "100%", textAlign: "center"}}>
                                         {currentEmail}
                                         <Img
                                             src={`${baseUrl}/static/mail.svg`}
                                             width="16"
                                             height="16"
-                                            className="inline align-middle ml-7"
+                                            style={{display: "inline", verticalAlign: "middle", marginLeft: "7px"}}
                                             alt="картинка телефона"
                                         />
                                     </Link>
@@ -336,38 +320,5 @@ export default function Email() {
                     </Section>
                 </Body>
             </Html>
-        </Tailwind>);
-}
-
-const col4 = {
-    width: "33.3333%",
-    minWidth: "33.3333%",
-}
-
-const main = {
-    backgroundColor: "white",
-    fontFamily: 'ProximaNova, Helvetica, Arial, sans-serif',
-    fontWeight: 300,
-}
-
-const mainLogo = {
-    display: "inline",
-}
-
-const linkLogo = {
-    width: "100%",
-    display: "inline-block",
-    textAlign: "center",
-}
-
-const linkReset = {
-    textDecoration: "none",
-    color: "black",
-    display: "inline-block",
-}
-
-const linkTopEmail = {
-    width: "100%",
-    textAlign: "right",
-    fontWeight: 400,
+    );
 }
